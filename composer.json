@@ -1,0 +1,12 @@
+{
+    "name": "cvs89/product_importer",
+    "description": "Product importer",
+    "type": "bigcommerce app",
+    "authors": [
+        {
+            "name": "chandraveer singh",
+            "email": "chandraveersingh.90@gmail.com"
+        }
+    ],
+    "require": {}
+}
