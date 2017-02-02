@@ -4,7 +4,6 @@
    print_r($url);
    echo '</pre>';*/
 
-
 $submit_url = "https://store-accxx7oobc.mybigcommerce.com/api/v2/time";
 
 $curl = curl_init();
@@ -21,12 +20,8 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)");
 curl_setopt($curl, CURLOPT_URL, $submit_url);
 
-$data = split("text/html", curl_exec($curl) );
-$temp = split("\r\n", $data[1]) ;
-
-$result = unserialize( $temp[2] ) ;
-
-print_r($result);
+$return = curl_exec($curl);
+print_r($return);
 curl_close($curl); 
 ?>
 
