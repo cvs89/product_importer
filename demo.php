@@ -13,7 +13,7 @@ echo json_last_error();
 curl_close($curl);
 exit();*/
 include('vendor/autoload.php')
-
+echo "include vendor";
 use Bigcommerce\Api\Client as Bigcommerce;
 
 Bigcommerce::configure(array(
