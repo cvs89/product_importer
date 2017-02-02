@@ -8,7 +8,7 @@ curl_setopt($curl, CURLOPT_HEADER, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_URL, $submit_url);
 $return = curl_exec($curl);
-print_r(json_encode($return));
+print_r(json_decode($return));
 curl_close($curl);
 exit();
 ?>
