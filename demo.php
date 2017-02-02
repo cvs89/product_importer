@@ -9,6 +9,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_URL, $submit_url);
 $return = curl_exec($curl);
 print_r(json_decode($return));
+echo json_last_error();
 curl_close($curl);
 exit();
 ?>
