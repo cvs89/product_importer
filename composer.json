@@ -8,5 +8,7 @@
             "email": "chandraveersingh.90@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "bigcommerce/api": "^3.0"
+    }
 }
