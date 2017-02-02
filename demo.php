@@ -12,6 +12,8 @@ print_r(json_decode($return));
 echo json_last_error();
 curl_close($curl);
 exit();*/
+include('vendor/autoload.php')
+
 use Bigcommerce\Api\Client as Bigcommerce;
 
 Bigcommerce::configure(array(
