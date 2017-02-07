@@ -36,7 +36,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 $result = mysqli_query($link,"SELECT * FROM products");
-echo '<pre>'
+echo '<pre>';
 while($row = mysqli_fetch_assoc($result)){
 	print_r($row);
 }
