@@ -1,5 +1,5 @@
 <?php
-function verifySignedRequest($signedRequest)
+function verifysignedrequest($signedRequest)
 {
     $get_data = explode('.', $signedRequest); 
 	echo 'dsf<pre>';
@@ -21,8 +21,8 @@ function verifySignedRequest($signedRequest)
 }
    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 echo 'load';
-$data = verifySignedRequest($_GET['signed_payload']);
-   echo '<pre>';
+$data = verifysignedrequest($_GET['signed_payload']);
+   echo 'sdf<pre>';
    print_r($_GET);
    echo '</pre>dsfs';
 echo '<pre>';
