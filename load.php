@@ -17,12 +17,12 @@ function verifysignedrequest($signedRequest)
     return $data;
 }
    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-   echo 'load';
+   //echo 'load';
    $data = verifysignedrequest($_GET['signed_payload']);
 
-   echo '<pre>';
-   print_r($data);
-   echo '</pre>';
+   //echo '<pre>';
+   //print_r($data);
+   //echo '</pre>';
 
 if(!(is_array($data) && count($data)>0)){
 	die("Bad signed request from BigCommerce!");
@@ -30,4 +30,4 @@ if(!(is_array($data) && count($data)>0)){
 
 ?>
 <h1>Welcome to Product Importer</h1>
-<a href="product.php">Load Products</a>
+<a href="product.php?user=<?php echo $data['user']['id'] ?>">Load Products</a>
