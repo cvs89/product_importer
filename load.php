@@ -24,6 +24,11 @@ function verifysignedrequest($signedRequest)
    print_r($data);
    echo '</pre>';
 
-
+if(!(is_array($data) && count($data)>0)){
+	die("Bad signed request from BigCommerce!");
+}
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$database = ltrim($url['path'],'/');
+$link = mysqli_connect($url['host'], $url['user'], $url['pass'], $database);
 ?>
-
+<h1>Welcome to Product Importer</h1>
