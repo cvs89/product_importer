@@ -19,11 +19,10 @@ use Bigcommerce\Api\Client as Bigcommerce;
 use Bigcommerce\Api\Connection;
 
 Bigcommerce::configure(array(
-    'store_url' => 'https://store-accxx7oobc.mybigcommerce.com',
-    'username'  => 'cvssolutions',
-    'api_key'   => '838d58977a565ba203cb77a829bd72fd48b70fd9'
+    'client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic',
+    'auth_token' => 'kw02huv18ydomen32vpof1wyfu6sbjr',
+    'store_hash' => 'accxx7oobc'
 ));
-
 $ping = Bigcommerce::getTime();
 
 if ($ping) 
