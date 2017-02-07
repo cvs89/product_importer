@@ -2,7 +2,9 @@
 function verifySignedRequest($signedRequest)
 {
     $get_data = explode('.', $signedRequest); 
-
+	echo 'dsf<pre>';
+   print_r($get_data);
+   echo '</pre>';
     // decode the data
     $signature = base64_decode($get_data[1]);
         $jsonStr = base64_decode($get_data[0]);
@@ -21,6 +23,9 @@ function verifySignedRequest($signedRequest)
 echo 'load';
 $data = verifySignedRequest($_GET['signed_payload']);
    echo '<pre>';
+   print_r($_GET);
+   echo '</pre>dsfs';
+echo '<pre>';
    print_r($data);
    echo '</pre>';
 
