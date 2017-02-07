@@ -43,3 +43,4 @@ while($row = mysqli_fetch_assoc($result)){
 echo '</pre>';
 ?>
 <h1>Welcome to Product Importer</h1>
+<a href="product.php">Load Products</a>
