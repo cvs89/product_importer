@@ -26,4 +26,4 @@ if(!(is_array($data) && count($data)>0)){
 
 ?>
 <h1>Welcome to Product Importer</h1>
-<a href="product.php?user=<?php echo $data['user']['id'] ?>">Load Products</a>
+<a href="demo.php?user=<?php echo $data['user']['id'] ?>">Load Products</a>
