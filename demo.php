@@ -25,7 +25,11 @@ Bigcommerce::configure(array(
 ));
 $ping = Bigcommerce::getTime();
 echo 'hi';
-if ($ping) 
-  echo $ping->format('H:i:s');
+$products = Bigcommerce::getProducts();
+
+foreach ($products as $product) {
+    echo $product->name;
+    echo $product->price;
+}
 ?>
 
