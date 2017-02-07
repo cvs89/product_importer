@@ -20,10 +20,6 @@ function verifysignedrequest($signedRequest)
    //echo 'load';
    $data = verifysignedrequest($_GET['signed_payload']);
 
-   //echo '<pre>';
-   //print_r($data);
-   //echo '</pre>';
-
 if(!(is_array($data) && count($data)>0)){
 	die("Bad signed request from BigCommerce!");
 }
