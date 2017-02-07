@@ -24,7 +24,7 @@ Bigcommerce::configure(array(
     'store_hash' => 'accxx7oobc'
 ));
 $ping = Bigcommerce::getTime();
-
+echo 'hi';
 if ($ping) 
   echo $ping->format('H:i:s');
 ?>
