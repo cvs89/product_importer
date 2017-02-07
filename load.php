@@ -12,6 +12,7 @@ function verifySignedRequest($signedRequest)
     $expectedSignature = hash_hmac('sha256', $jsonStr, $clientSecret(), $raw = false);
     if (!hash_equals($expectedSignature, $signature)) {
         error_log('Bad signed request from BigCommerce!');
+	echo 'Bad signed request from BigCommerce!';
         return null;
     }
     return $data;
