@@ -14,8 +14,12 @@
 		exit("No store Available");
 	}
 	$result_token = mysqli_query($link,"select * from stores where user_id=".$user);
-	$result = mysqli_query($link,"SELECT * FROM products as a join variants as b on (a.id = b.product_id) limit 1");
 	echo '<pre>';
+	while($rows = mysqli_fetch_assoc($result_token)){
+		print_r($rows);
+	}
+	$result = mysqli_query($link,"SELECT * FROM products as a join variants as b on (a.id = b.product_id) limit 1");
+	
 	while($row = mysqli_fetch_assoc($result)){
 		print_r($row);
 	}
