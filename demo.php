@@ -14,7 +14,9 @@ curl_close($curl);
 exit();*/
 include('vendor/autoload.php')
 echo "include vendor";
+
 use Bigcommerce\Api\Client as Bigcommerce;
+use Bigcommerce\Api\Connection;
 
 Bigcommerce::configure(array(
     'store_url' => 'https://store-accxx7oobc.mybigcommerce.com',
