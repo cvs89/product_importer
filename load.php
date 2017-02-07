@@ -1,11 +1,11 @@
 <?php
 function verifySignedRequest($signedRequest)
 {
-    list($encodedData, $encodedSignature) = explode('.', $signedRequest, 2); 
+    $get_data = explode('.', $signedRequest); 
 
     // decode the data
-    $signature = base64_decode($encodedSignature);
-        $jsonStr = base64_decode($encodedData);
+    $signature = base64_decode($get_data[1]);
+        $jsonStr = base64_decode($get_data[0]);
     $data = json_decode($jsonStr, true);
 
     // confirm the signature
