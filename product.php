@@ -28,8 +28,7 @@ $categories = Bigcommerce::getCategories();
 	echo '<pre>';
 	//print_r($categories);
 	foreach ($categories as $categorie) {
-		$cat = (array)$categorie;
-		print_r($cat['*fields']); //sdfdsfsdfdsf
+		echo $categorie->id;
 	}
 	while($row = mysqli_fetch_assoc($result)){
 		print_r($row);
