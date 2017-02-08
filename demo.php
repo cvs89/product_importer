@@ -24,7 +24,7 @@ Bigcommerce::configure(array(
     'store_hash' => 'accxx7oobc'
 ));
 $ping = Bigcommerce::getTime();
-echo 'hi';
+echo 'his';
 $products = Bigcommerce::getProducts();
 print_r($products);
 foreach ($products as $product) {
