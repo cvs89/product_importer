@@ -12,15 +12,19 @@ print_r(json_decode($return));
 echo json_last_error();
 curl_close($curl);
 exit();*/
+include_once 'config.php';
 include 'vendor/autoload.php';
 echo "include vendor";
 
 use Bigcommerce\Api\Client as Bigcommerce;
 use Bigcommerce\Api\Connection;
-
+if(isset($_GET['user'])){
+$select = "select * from stores where user_id='".$_GET['user']."'";
+$result_token = mysqli_query($link,$select);
+$rows = mysqli_fetch_assoc($result_token);
 Bigcommerce::configure(array(
     'client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic',
-    'auth_token' => 'ayw0rc82wtxsggwz6sd2whwmdrl2vqu',
+    'auth_token' => $rows['access_token'],
     'store_hash' => 'accxx7oobc'
 ));
 $ping = Bigcommerce::getTime();
@@ -32,6 +36,9 @@ echo '</pre>';
 foreach ($products as $product) {
     //echo $product->name;
     //echo $product->price;
+}
+}else{
+	echo 'Invalid request';
 }
 ?>
 
