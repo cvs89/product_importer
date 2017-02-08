@@ -31,8 +31,19 @@ $categories = Bigcommerce::getCategories();
 		echo $categorie->id;
 	}
 	while($row = mysqli_fetch_assoc($result)){
-		print_r($row);
 		
+		$fields = array(
+					  "name" => $row['title'],
+					  "price" => $row['price'],
+					  "category" => $row[14],
+					  "weight" => $row['grams'],
+					  "sku" => $row['sku'],
+					  'type' => 'physical',
+					  'availability' => 'available',
+					  'is_visible' => true
+					);
+			$product =	Bigcommerce::createProduct($fields);
+			print_r($product);
 	}
 	echo '</pre>';
 
