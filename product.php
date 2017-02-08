@@ -40,8 +40,20 @@ while ($row = mysqli_fetch_assoc($result)) {
 	//print_r($fields);
 	//$product = new stdClass();
 	//$product = (object) $fields;
+	$imageparge = explode(',', $row['image1']);
+	$product_image = '';
+	foreach ($imageparge as $image) {
+		if ($image != '') {
+			$product_image = $image;
+		}
+	}
 	try {
 		$products = Bigcommerce::createProduct($fields);
+		if ($product_image != "") {
+			$image = array('product_id' => $products -> id, 'image_file' => $product_image, 'is_thumbnail' => true, 'sort_order' => 1, 'description' => $products -> name, );
+			$imageResult = Bigcommerce::createProductImage($products -> id, $image);
+		}
+
 		print_r($products);
 		echo 'try';
 	} catch(Bigcommerce\Api\Error $error) {
