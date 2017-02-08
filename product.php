@@ -43,11 +43,11 @@ $categories = Bigcommerce::getCategories();
 					  'availability' => 'available',
 					  'is_visible' => true
 					);
-			print_r($fields);
+			//print_r($fields);
 			$product = new stdClass();
 			$product = (object) $fields;
 			try{
-				$product =	Bigcommerce::createProduct($product);
+				$products =	Bigcommerce::createProduct($product);
 			    print_r($product);
 			    echo 'try';
 			}catch(Bigcommerce\Api\Error $error){
