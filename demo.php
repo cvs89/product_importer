@@ -14,7 +14,7 @@ curl_close($curl);
 exit();*/
 include_once 'config.php';
 include 'vendor/autoload.php';
-echo "include vendor";
+
 
 use Bigcommerce\Api\Client as Bigcommerce;
 use Bigcommerce\Api\Connection;
