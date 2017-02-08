@@ -22,7 +22,7 @@ use Bigcommerce\Api\Connection;
 	    'store_hash' => 'accxx7oobc'
 	));
 	
-	$result = mysqli_query($link,"SELECT * FROM products as a join variants as b on (a.id = b.product_id) limit 1");
+	$result = mysqli_query($link,"SELECT * FROM products as a join variants as b on (a.id = b.product_id) limit 1 1");
 	$filter = array("is_featured" => true);
 
 $categories = Bigcommerce::getCategories();
