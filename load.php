@@ -19,6 +19,7 @@ function verifysignedrequest($signedRequest)
    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
    //echo 'load';
    $data = verifysignedrequest($_GET['signed_payload']);
+   print_($data);
 
 if(!(is_array($data) && count($data)>0)){
 	die("Bad signed request from BigCommerce!");
