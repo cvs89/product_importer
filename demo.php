@@ -20,7 +20,7 @@ use Bigcommerce\Api\Connection;
 
 Bigcommerce::configure(array(
     'client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic',
-    'auth_token' => 'kw02huv18ydomen32vpof1wyfu6sbjr',
+    'auth_token' => 'efd3lx3oq5w6qdcykvns8b0auz4chx',
     'store_hash' => 'accxx7oobc'
 ));
 $ping = Bigcommerce::getTime();
