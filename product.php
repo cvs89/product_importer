@@ -49,7 +49,7 @@ $categories = Bigcommerce::getCategories();
 			//$product = (object) $fields;
 			try{
 				$products =	Bigcommerce::createProduct($fields);
-			    print_r(json_encode($products));
+			    print_r($products);
 			    echo 'try';
 			}catch(Bigcommerce\Api\Error $error){
 				echo $error->getCode();
