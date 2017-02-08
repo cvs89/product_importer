@@ -26,7 +26,7 @@ Bigcommerce::configure(array(
 $ping = Bigcommerce::getTime();
 echo 'hi';
 $products = Bigcommerce::getProducts();
-
+print_r($products);
 foreach ($products as $product) {
     echo $product->name;
     echo $product->price;
