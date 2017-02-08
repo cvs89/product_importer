@@ -22,9 +22,14 @@ use Bigcommerce\Api\Connection;
 	));
 	
 	$result = mysqli_query($link,"SELECT * FROM products as a join variants as b on (a.id = b.product_id) limit 1");
+	$filter = array("is_featured" => true);
+
+$categories = Bigcommerce::getCategories();
 	echo '<pre>';
+	print_r($categories);
 	while($row = mysqli_fetch_assoc($result)){
 		print_r($row);
+		
 	}
 	echo '</pre>';
 
