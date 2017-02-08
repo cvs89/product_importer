@@ -22,7 +22,7 @@ use Bigcommerce\Api\Connection;
 	    'store_hash' => 'accxx7oobc'
 	));
 	
-	$result = mysqli_query($link,"SELECT * FROM products as a join variants as b on (a.id = b.product_id) limit 1 1");
+	$result = mysqli_query($link,"SELECT * FROM products as a join variants as b on (a.id = b.product_id) limit 1, 1");
 	$filter = array("is_featured" => true);
 
 $categories = Bigcommerce::getCategories();
@@ -45,11 +45,11 @@ $categories = Bigcommerce::getCategories();
 					  'is_visible' => true
 					);
 			//print_r($fields);
-			$product = new stdClass();
-			$product = (object) $fields;
+			//$product = new stdClass();
+			//$product = (object) $fields;
 			try{
-				$products =	Bigcommerce::createProduct($product);
-			    print_r(json_encode($product));
+				$products =	Bigcommerce::createProduct($fields);
+			    print_r(json_encode($products));
 			    echo 'try';
 			}catch(Bigcommerce\Api\Error $error){
 				echo $error->getCode();
