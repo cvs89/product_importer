@@ -44,9 +44,10 @@ $categories = Bigcommerce::getCategories();
 					  'is_visible' => true
 					);
 			print_r($fields);
-			
+			$product = new stdClass();
+			$product = (object) $fields;
 			try{
-				$product =	Bigcommerce::createProduct($fields);
+				$product =	Bigcommerce::createProduct($product);
 			    print_r($product);
 			    echo 'try';
 			}catch(Bigcommerce\Api\Error $error){
