@@ -34,7 +34,7 @@
 		$categories = Bigcommerce::getCategories();
 		//print_r($categories);
 		foreach ($categories as $categorie) {
-			echo $categorie -> id;
+			//echo $categorie -> id;
 		}
 		while ($row = mysqli_fetch_assoc($result)) {
 			//print_r($row);
