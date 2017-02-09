@@ -44,13 +44,13 @@
 				$fields['description'] = $row['body'];
 			}
 			if (isset($row['handle']) && $row['handle'] != '') {
-				//$fields['custom_url'] = $row['handle'];
+				$fields['custom_url'] = '/'.$row['handle'].'/';
 			}
 			if (isset($row['seotitle']) && $row['seotitle'] != '') {
-				//$fields['page_title'] = $row['seotitle'];
+				$fields['page_title'] = $row['seotitle'];
 			}
 			if (isset($row['seodescription']) && $row['seodescription'] != '') {
-				//$fields['meta_description'] = $row['seodescription'];
+				$fields['meta_description'] = $row['seodescription'];
 			}
 			//if(custom_url)
 			// [page_title] =>
