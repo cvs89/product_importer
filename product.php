@@ -53,7 +53,7 @@ $filter = array("is_featured" => true);
 		<?php
 while ($row = mysqli_fetch_assoc($result)) {
 	print_r($row);
-		$image = aaray();
+		/*$image = aaray();
 		if($row['image']!= ''){
 			$image[] = $row['image'];
 		}
@@ -87,7 +87,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		if($row['image10']!= ''){
 			$image[] = $row['image10'];
 		}
-		
+		*/
 		?>
 		<tr>
 			<td><?php echo $row['title']; ?></td>
