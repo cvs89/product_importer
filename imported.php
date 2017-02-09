@@ -23,10 +23,10 @@
 			exit("No store Available");
 		}
 		$result_token = mysqli_query($link, "select * from stores where user_id=" . $user);
-		$rows = mysqli_fetch_assoc($result_token);
+		$user_rows = mysqli_fetch_assoc($result_token);
 		//echo $rows['access_token'];
 
-		Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $rows['access_token'], 'store_hash' => 'accxx7oobc'));
+		Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $user_rows['access_token'], 'store_hash' => $user_rows['storehash']));
 
 		$result = mysqli_query($link, "SELECT * FROM products as a join variants as b on (a.id = b.product_id) where a.id='".$pid."'");
 		$filter = array("is_featured" => true);
@@ -37,7 +37,7 @@
 			echo $categorie -> id;
 		}
 		while ($row = mysqli_fetch_assoc($result)) {
-			print_r($row);
+			//print_r($row);
 
 			$fields = array("name" => $row['title'], "price" => $row['price'], "categories" => array(18), "weight" => $row['grams'], "sku" => $row['sku'], 'type' => 'physical', 'availability' => 'available', 'is_visible' => true);
 			if (isset($row['body']) && $row['body'] != '') {
@@ -73,8 +73,13 @@
 					$imageResult = Bigcommerce::createProductImage($products -> id, $image);
 				}
 
-				print_r($products);
-				echo 'try';
+				//print_r($products);
+				//print_r($imageResult);
+				//echo 'try';
+				if($products->id){
+					$insert = " insert into store_products (bigcommerce_pid, product_id, store_id) values('".$products->id."', '".$row['product_id']."', '".$user_rows['id']."')";
+					$product_successresult = mysqli_query($link,$insert);
+				}
 			} catch(Bigcommerce\Api\Error $error) {
 				echo $error -> getCode();
 				echo $error -> getMessage();
