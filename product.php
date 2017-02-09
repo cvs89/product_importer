@@ -1,4 +1,5 @@
 <?php
+error_reporting(1);
 include_once 'config.php';
 include 'vendor/autoload.php';
 
