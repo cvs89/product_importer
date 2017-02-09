@@ -51,6 +51,7 @@ $filter = array("is_featured" => true);
 	<tbody>
 		<?php
 while ($row = mysqli_fetch_assoc($result)) {
+	print_r($row);
 		$image = aaray();
 		if($row['image']!= ''){
 			$image[] = $row['image'];
