@@ -91,7 +91,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		?>
 		<tr>
 			<td><?php echo $row['title']; ?></td>
-			<td><?php echo $row['body']; ?></td>
+			<td><?php echo substr($row['body'], 0,50); ?></td>
 			<td><?php echo $row['handle']; ?></td>
 			<td><?php echo $row['vendor']; ?></td>
 			<td><?php echo $row['type']; ?></td>
