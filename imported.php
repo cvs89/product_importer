@@ -97,7 +97,7 @@
 			}
 		}
 		} else {
-			echo $select = "SELECT a.*, b.*, c.store_id as store_id FROM products as a join variants as b on (a.id = b.product_id) join store_products as c on (a.id=c.product_id and c.store_id='".$user_result['id']."')";
+			echo $select = "SELECT a.*, b.*, c.store_id as store_id FROM products as a join variants as b on (a.id = b.product_id) join store_products as c on (a.id=c.product_id and c.store_id='".$user_rows['id']."')";
 			$result = mysqli_query($link, $select);
 
 //$categories = Bigcommerce::getCategories();
