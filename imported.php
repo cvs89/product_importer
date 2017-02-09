@@ -3,7 +3,7 @@
 		<title>Imported Product</title>
 	</head>
 	<body>
-		<h2 style="text-align: center">Imported Us</h2>
+		<h2 style="text-align: center">Imported Product</h2>
 		<?php
 		include_once 'config.php';
 		include 'vendor/autoload.php';

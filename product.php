@@ -13,12 +13,12 @@ if (isset($_GET['user'])) {
 	exit("No store Available");
 }
 $result_token = mysqli_query($link, "select * from stores where user_id=" . $user);
-$rows = mysqli_fetch_assoc($result_token);
+$user_result = mysqli_fetch_assoc($result_token);
 //echo $rows['access_token'];
 
 Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $rows['access_token'], 'store_hash' => 'accxx7oobc'));
 
-$result = mysqli_query($link, "SELECT * FROM products as a join variants as b on (a.id = b.product_id)");
+$result = mysqli_query($link, "SELECT a.*, b.*, c.store_id as store_id FROM products as a join variants as b on (a.id = b.product_id) left join store_products as c on (a.id=c.product_id)");
 $filter = array("is_featured" => true);
 
 //$categories = Bigcommerce::getCategories();
@@ -128,7 +128,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<td><?php echo $row['compareatprice']; ?></td>
 			<!--<td><?php echo $row['barcode']; ?></td>
 			<td><?php echo $row['weightunit']; ?></td>-->
-			<td><a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>">Import</a></td> 
+			<td><a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>">Import: <?php echo $row['store_id'] ?></a></td> 
 		</tr>
 		<?php
 
