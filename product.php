@@ -17,14 +17,14 @@ $rows = mysqli_fetch_assoc($result_token);
 
 Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $rows['access_token'], 'store_hash' => 'accxx7oobc'));
 
-$result = mysqli_query($link, "SELECT * FROM products as a join variants as b on (a.id = b.product_id) ");
+$result = mysqli_query($link, "SELECT * FROM products as a join variants as b on (a.id = b.product_id)");
 $filter = array("is_featured" => true);
 
-$categories = Bigcommerce::getCategories();
+//$categories = Bigcommerce::getCategories();
 //print_r($categories);
-foreach ($categories as $categorie) {
-	echo $categorie -> id;
-}
+//foreach ($categories as $categorie) {
+	//echo $categorie -> id;
+//}
 ?>
 <table>
 	<thead>
