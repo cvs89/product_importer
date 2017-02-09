@@ -97,12 +97,12 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<td><?php echo $row['type']; ?></td>
 			<td><?php echo $row['published']; ?></td>
 			<td><?php 
-					foreach ($image as $img) {
+					/*foreach ($image as $img) {
 						if($img != ''){
 							echo $img;
 						}
 						
-					}
+					}*/
 				 ?></td>
 			<td><?php echo $row['seotitle']; ?></td>
 			<td><?php echo $row['seodescription']; ?></td>
