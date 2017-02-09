@@ -62,7 +62,7 @@
 			$imageparge = explode(',', $row['image1']);
 			$product_image = '';
 			foreach ($imageparge as $image) {
-				if ($image != '') {
+				if (trim($image) != '') {
 					$product_image = $image;
 				}
 			}
