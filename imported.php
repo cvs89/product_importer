@@ -23,14 +23,15 @@
 		$user = '';
 		if (isset($_GET['user'])) {
 			$user = $_GET['user'];
+			$result_token = mysqli_query($link, "select * from stores where user_id=" . $user);
+		    $user_rows = mysqli_fetch_assoc($result_token);
 		} else {
 			exit("No store Available");
 		}
 		if (isset($_GET['pid'])) {
 			$pid = $_GET['pid'];
 		
-		$result_token = mysqli_query($link, "select * from stores where user_id=" . $user);
-		$user_rows = mysqli_fetch_assoc($result_token);
+		
 		//echo $rows['access_token'];
 
 		Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $user_rows['access_token'], 'store_hash' => $user_rows['storehash']));
