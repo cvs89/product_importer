@@ -29,7 +29,7 @@ $filter = array("is_featured" => true);
 ?>
 <table>
 	<thead>
-		<th>Title(Name)</th>
+		<th>aTitle(Name)</th>
 		<th>Description</th>
 		<th>URL-Key</th>
 		<th>Vendor</th>
