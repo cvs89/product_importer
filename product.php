@@ -39,6 +39,7 @@ $filter = array("is_featured" => true);
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<div class="table-responsive">
 		<table class="table-striped">
 	<thead>
 		<th>aTitle(Name)</th>
@@ -135,7 +136,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 	?>
 	</tbody>
 </table>
-
+</div>
 	</body>
 </html>
 
