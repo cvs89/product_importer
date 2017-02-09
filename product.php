@@ -53,7 +53,7 @@ $filter = array("is_featured" => true);
 		<?php
 while ($row = mysqli_fetch_assoc($result)) {
 	//print_r($row);
-		/*$image = aaray();
+		$image = array();
 		if($row['image']!= ''){
 			$image[] = $row['image'];
 		}
@@ -87,7 +87,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		if($row['image10']!= ''){
 			$image[] = $row['image10'];
 		}
-		*/
+		
 		?>
 		<tr>
 			<td><?php echo $row['title']; ?></td>
@@ -98,12 +98,12 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<td><?php echo $row['type']; ?></td>
 			<td><?php echo $row['published']; ?></td>
 			<td><?php 
-					/*foreach ($image as $img) {
+					foreach ($image as $img) {
 						if($img != ''){
 							echo $img;
 						}
 						
-					}*/
+					}
 				 ?></td>
 			<td><?php echo $row['seotitle']; ?></td>
 			<td><?php echo $row['seodescription']; ?></td>
