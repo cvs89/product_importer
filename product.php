@@ -58,8 +58,8 @@ $filter = array("is_featured" => true);
 		<th>Weight(grams)</th>-->
 		<th>Price</th>
 		<th>Compareat Price</th>
-		<th>barcode</th>
-		<th>WeightUnit</th>
+		<!--<th>barcode</th>
+		<th>WeightUnit</th>-->
 		<th>Import</th>
 	</thead>
 	<tbody>
@@ -126,8 +126,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<td><?php echo $row['grams']; ?></td>-->
 			<td><?php echo $row['price']; ?></td>
 			<td><?php echo $row['compareatprice']; ?></td>
-			<td><?php echo $row['barcode']; ?></td>
-			<td><?php echo $row['weightunit']; ?></td>
+			<!--<td><?php echo $row['barcode']; ?></td>
+			<td><?php echo $row['weightunit']; ?></td>-->
 			<td><a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>">Import</a></td> 
 		</tr>
 		<?php
