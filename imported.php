@@ -107,6 +107,7 @@
 //echo $categorie -> id;
 //}
 ?>
+<h3><a href="load.php?signed_payload=<?php echo $_GET['signed_payload'] ?>">Back</a></h3>
 		<div class="table-responsive">
 		<table class="table table-striped">
 	<thead>
