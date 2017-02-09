@@ -49,8 +49,8 @@ if (!(is_array($data) && count($data) > 0)) {
 	</head>
 	<body>
 		<h1>Welcome to Product Importer</h1>
-		<a href="about.php?user=<?php echo $data['user']['id'] ?>">About Us</a>
-		<a href="product.php?user=<?php echo $data['user']['id'] ?>">Our Products</a>
-		<a href="imported.php?user=<?php echo $data['user']['id'] ?>">Imported Products</a>
+		<a href="about.php?user=<?php echo $data['user']['id'] ?>&signed_payload=<?php echo $_GET['signed_payload'] ?>">About Us</a>
+		<a href="product.php?user=<?php echo $data['user']['id'] ?>&signed_payload=<?php echo $_GET['signed_payload'] ?>">Our Products</a>
+		<a href="imported.php?user=<?php echo $data['user']['id'] ?>&signed_payload=<?php echo $_GET['signed_payload'] ?>">Imported Products</a>
 	</body>
 </html>

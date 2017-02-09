@@ -41,6 +41,7 @@ $filter = array("is_featured" => true);
 	</head>
 	<body style="padding: 10px;">
 		<h2 style="text-align: center">Our Products</h2>
+		<h3><a href="load.php?signed_payload=<?php echo $_GET['signed_payload'] ?>">Back</a></h3>
 		<div class="table-responsive">
 		<table class="table table-striped">
 	<thead>
