@@ -91,7 +91,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		?>
 		<tr>
 			<td><?php echo $row['title']; ?></td>
-			<td><?php echo $row['body']; ?></td>
+			<?php /*<td><?php echo $row['body']; ?></td>
 			<td><?php echo $row['handle']; ?></td>
 			<td><?php echo $row['vendor']; ?></td>
 			<td><?php echo $row['type']; ?></td>
@@ -103,7 +103,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 							echo $img;
 						}
 						
-					}*/
+					}
 				 ?></td>
 			<td><?php echo $row['seotitle']; ?></td>
 			<td><?php echo $row['seodescription']; ?></td>
@@ -115,7 +115,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<td><?php echo $row['compareatprice']; ?></td>
 			<td><?php echo $row['barcode']; ?></td>
 			<td><?php echo $row['weightunit']; ?></td>
-			<td><a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>"</td>
+			<td><a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>"</td> */ ?>
 		</tr>
 		<?php
 
