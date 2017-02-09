@@ -134,7 +134,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<?php
 			if(trim($row['store_id'])==""){
 			 ?>
-<a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>">Import:</a>
+<a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>">Import</a>
 <?php 
 			}else{
 				echo 'Imported';
