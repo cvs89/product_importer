@@ -12,7 +12,7 @@ if (isset($_GET['user'])) {
 } else {
 	exit("No store Available");
 }
-$result_token = mysqli_query($link, "select * from stores where user_id=" . $user);
+$result_token = mysqli_query($link, "select * from stores where user_id='" . $user."'");
 $user_result = mysqli_fetch_assoc($result_token);
 echo $rows['access_token'];
 exit();
