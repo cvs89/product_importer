@@ -68,6 +68,7 @@
 			}
 			try {
 				$products = Bigcommerce::createProduct($fields);
+				if($products->id){
 				if ($product_image != "") {
 					$image = array('product_id' => $products -> id, 'image_file' => $product_image, 'is_thumbnail' => true, 'sort_order' => 1, 'description' => $products -> name, );
 					$imageResult = Bigcommerce::createProductImage($products -> id, $image);
@@ -76,10 +77,12 @@
 				//print_r($products);
 				//print_r($imageResult);
 				//echo 'try';
-				if($products->id){
-					$insert = " insert into store_products (bigcommerce_pid, product_id, store_id) values('".$products->id."', '".$row['product_id']."', '".$user_rows['id']."')";
+				
+					echo $insert = "insert into store_products (bigcommerce_pid, product_id, store_id) values('".$products->id."', '".$row['product_id']."', '".$user_rows['id']."')";
 					$product_successresult = mysqli_query($link,$insert);
-					echo "<h2 style='text-align:center;'>Product Imported Suceessfullu</h2><a href='product.php?user=".$user."' >Back</a>";
+					echo "<h2 style='text-align:center;'>Product Imported Suceessfully</h2><a href='product.php?user=".$user."' >Back</a>";
+				}else{
+					echo "Some this wents wrong please contect our support";
 				}
 			} catch(Bigcommerce\Api\Error $error) {
 				echo $error -> getCode();
