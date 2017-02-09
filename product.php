@@ -130,7 +130,17 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<td><?php echo $row['compareatprice']; ?></td>
 			<!--<td><?php echo $row['barcode']; ?></td>
 			<td><?php echo $row['weightunit']; ?></td>-->
-			<td><a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>">Import: <?php echo $row['store_id'] ?></a></td> 
+			<td>
+			<?php
+			if(trim($row['store_id'])!=""){
+			 ?>
+<a href="imported.php?user=<?php echo $user ?>&pid=<?php echo $row['product_id']; ?>">Import:</a>
+<?php 
+			}else{
+				echo 'Imported';
+			}
+?>
+</td> 
 		</tr>
 		<?php
 
