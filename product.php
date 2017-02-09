@@ -39,6 +39,7 @@ $filter = array("is_featured" => true);
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body style="padding: 10px;">
+		<h2 style="text-align: center">Our Products</h2>
 		<div class="table-responsive">
 		<table class="table table-striped">
 	<thead>
