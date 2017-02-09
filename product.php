@@ -40,7 +40,7 @@ $filter = array("is_featured" => true);
 	</head>
 	<body>
 		<div class="table-responsive">
-		<table class="table-striped">
+		<table class="table table-striped">
 	<thead>
 		<th>aTitle(Name)</th>
 		<th>Description</th>
