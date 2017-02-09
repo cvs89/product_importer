@@ -79,6 +79,7 @@
 				if($products->id){
 					$insert = " insert into store_products (bigcommerce_pid, product_id, store_id) values('".$products->id."', '".$row['product_id']."', '".$user_rows['id']."')";
 					$product_successresult = mysqli_query($link,$insert);
+					echo "<h2 style='text-align:center;'>Product Imported Suceessfullu</h2><a href='product.php?user=".$user."' >Back</a>";
 				}
 			} catch(Bigcommerce\Api\Error $error) {
 				echo $error -> getCode();
