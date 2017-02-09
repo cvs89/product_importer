@@ -48,9 +48,9 @@ $filter = array("is_featured" => true);
 		<th>Description</th>
 		<!--<th>URL-Key</th>-->
 		<th>Vendor</th>
-		<th>Type</th>
+		<!--<th>Type</th>
 		<th>Tags</th>
-		<!-- <th>Published</th> -->
+		 <th>Published</th> -->
 		<!--<th>Image</th>-->
 		<th>SEO Title</th>
 		<th>SEO Description</th>
@@ -109,9 +109,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<td><?php echo substr($row['body'], 0, 50); ?></td>
 			<!--<td><?php echo $row['handle']; ?></td>-->
 			<td><?php echo $row['vendor']; ?></td>
-			<td><?php echo $row['type']; ?></td>
-			<td><?php echo $row['type']; ?></td>
-			 <!-- <td><?php echo $row['published']; ?></td> -->
+			 <!-- <td><?php echo $row['type']; ?></td>
+			<td><?php echo $row['tags']; ?></td>
+			<td><?php echo $row['published']; ?></td> -->
 			<!--<td><?php
 			foreach ($image as $img) {
 				if ($img != '') {
