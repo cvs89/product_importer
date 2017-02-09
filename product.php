@@ -15,6 +15,7 @@ if (isset($_GET['user'])) {
 $result_token = mysqli_query($link, "select * from stores where user_id='" . $user."'");
 $user_result = mysqli_fetch_assoc($result_token);
 echo $rows['access_token'];
+print_r($user_result);
 exit();
 Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $rows['access_token'], 'store_hash' => 'accxx7oobc'));
 
