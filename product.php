@@ -44,7 +44,7 @@ $filter = array("is_featured" => true);
 		<div class="table-responsive">
 		<table class="table table-striped">
 	<thead>
-		<th>aTitle(Name)</th>
+		<th>Title(Name)</th>
 		<th>Description</th>
 		<!--<th>URL-Key</th>-->
 		<th>Vendor</th>
