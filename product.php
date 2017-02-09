@@ -44,7 +44,7 @@ $filter = array("is_featured" => true);
 	<thead>
 		<th>aTitle(Name)</th>
 		<th>Description</th>
-		<th>URL-Key</th>
+		<!--<th>URL-Key</th>-->
 		<th>Vendor</th>
 		<th>Type</th>
 		<th>Tags</th>
@@ -52,10 +52,10 @@ $filter = array("is_featured" => true);
 		<th>Image</th>
 		<th>SEO Title</th>
 		<th>SEO Description</th>
-		<th>Size</th>
+		<!--<th>Size</th>
 		<th>Color</th>
 		<th>SKU</th>
-		<th>Weight(grams)</th>
+		<th>Weight(grams)</th>-->
 		<th>Price</th>
 		<th>Compareat Price</th>
 		<th>barcode</th>
@@ -105,7 +105,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		<tr>
 			<td><?php echo $row['title']; ?></td>
 			<td><?php echo substr($row['body'], 0, 50); ?></td>
-			<td><?php echo $row['handle']; ?></td>
+			<!--<td><?php echo $row['handle']; ?></td>-->
 			<td><?php echo $row['vendor']; ?></td>
 			<td><?php echo $row['type']; ?></td>
 			<td><?php echo $row['type']; ?></td>
@@ -120,10 +120,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 				 ?></td>
 			<td><?php echo $row['seotitle']; ?></td>
 			<td><?php echo $row['seodescription']; ?></td>
-			<td><?php echo $row['size']; ?></td>
+			<!--<td><?php echo $row['size']; ?></td>
 			<td><?php echo $row['color']; ?></td>
 			<td><?php echo $row['sku']; ?></td>
-			<td><?php echo $row['grams']; ?></td>
+			<td><?php echo $row['grams']; ?></td>-->
 			<td><?php echo $row['price']; ?></td>
 			<td><?php echo $row['compareatprice']; ?></td>
 			<td><?php echo $row['barcode']; ?></td>
