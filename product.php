@@ -24,10 +24,22 @@ $filter = array("is_featured" => true);
 //$categories = Bigcommerce::getCategories();
 //print_r($categories);
 //foreach ($categories as $categorie) {
-	//echo $categorie -> id;
+//echo $categorie -> id;
 //}
 ?>
-<table>
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<table class="table-striped">
 	<thead>
 		<th>aTitle(Name)</th>
 		<th>Description</th>
@@ -91,19 +103,19 @@ while ($row = mysqli_fetch_assoc($result)) {
 		?>
 		<tr>
 			<td><?php echo $row['title']; ?></td>
-			<td><?php echo substr($row['body'], 0,50); ?></td>
+			<td><?php echo substr($row['body'], 0, 50); ?></td>
 			<td><?php echo $row['handle']; ?></td>
 			<td><?php echo $row['vendor']; ?></td>
 			<td><?php echo $row['type']; ?></td>
 			<td><?php echo $row['type']; ?></td>
 			<td><?php echo $row['published']; ?></td>
-			<td><?php 
-					foreach ($image as $img) {
-						if($img != ''){
-							echo $img;
-						}
-						
-					}
+			<td><?php
+			foreach ($image as $img) {
+				if ($img != '') {
+					echo $img;
+				}
+
+			}
 				 ?></td>
 			<td><?php echo $row['seotitle']; ?></td>
 			<td><?php echo $row['seodescription']; ?></td>
@@ -123,3 +135,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 	?>
 	</tbody>
 </table>
+
+	</body>
+</html>
+
