@@ -14,10 +14,10 @@ if (isset($_GET['user'])) {
 }
 $result_token = mysqli_query($link, "select * from stores where user_id='" . $user."'");
 $user_result = mysqli_fetch_assoc($result_token);
-echo $rows['access_token'];
-print_r($user_result);
-exit();
-Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $rows['access_token'], 'store_hash' => 'accxx7oobc'));
+echo $user_result['access_token'];
+//print_r($user_result);
+//exit();
+Bigcommerce::configure(array('client_id' => 'gmeaga68mcb9zv8gz6an6vq3zjtakic', 'auth_token' => $user_result['access_token'], 'store_hash' => $user_result['storehash']));
 
 $result = mysqli_query($link, "SELECT a.*, b.*, c.store_id as store_id FROM products as a join variants as b on (a.id = b.product_id) left join store_products as c on (a.id=c.product_id)");
 $filter = array("is_featured" => true);
