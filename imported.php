@@ -19,6 +19,7 @@
 
 		use Bigcommerce\Api\Client as Bigcommerce;
 		use Bigcommerce\Api\Connection;
+		use Bigcommerce\Api\Resources\ProductImage as ProductImage;
 
 		$user = '';
 		if (isset($_GET['user'])) {
@@ -78,8 +79,14 @@
 				$products = Bigcommerce::createProduct($fields);
 				if($products->id){
 				if ($product_image != "") {
-					$image = array('product_id' => $products -> id, 'image_file' => $product_image, 'is_thumbnail' => true, 'sort_order' => 1, 'description' => $products -> name, );
-					$imageResult = Bigcommerce::createProductImage($products -> id, $image);
+					//$image = array('product_id' => $products -> id, 'image_file' => $product_image, 'is_thumbnail' => true, 'sort_order' => 1, 'description' => $products -> name, );
+					//$imageResult = Bigcommerce::createProductImage($products -> id, $image);
+					$new_product_image = new ProductImage();
+					$new_product_image->product_id      = $products -> id;
+					$new_product_image->image_file      = $product_image;
+					$new_product_image->is_thumbnail    = true;
+					$new_product_image->description     = $products -> name;
+					$product_image = $new_product_image->create();
 				}
 
 				//print_r($products);
