@@ -78,7 +78,7 @@
 			try {
 				$products = Bigcommerce::createProduct($fields);
 				if($products->id){
-					echo $product_image;
+					//echo $product_image;
 				if ($product_image != "") {
 					//$image = array('product_id' => $products -> id, 'image_file' => $product_image, 'is_thumbnail' => true, 'sort_order' => 1, 'description' => $products -> name, );
 					//$imageResult = Bigcommerce::createProductImage($products -> id, $image);
